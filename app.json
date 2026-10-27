@@ -1,0 +1,40 @@
+{
+  "expo": {
+    "name": "front-end",
+    "slug": "front-end",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/favicon.png",
+    "scheme": "myapp",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSLocalNetworkUsageDescription": "Kết nối máy chủ phát triển Expo và API cửa hàng trên cùng mạng Wi-Fi.",
+        "NSAppTransportSecurity": { "NSAllowsLocalNetworking": true }
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/favicon.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "single",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/favicon.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#ffffff"
+        }
+      ]
+    ]
+  }
+}
