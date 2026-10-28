@@ -39,7 +39,14 @@ function LoadedImage({ source, label, resizeMode }) {
     <>
       <Image
         key={attempt}
-        source={{ uri: source }}
+        source={{
+          uri: source,
+          headers: {
+            Referer: "https://cellphones.com.vn/",
+            "User-Agent":
+              "Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.91 Mobile Safari/537.36",
+          },
+        }}
         accessibilityLabel={label}
         style={StyleSheet.absoluteFillObject}
         resizeMode={resizeMode}

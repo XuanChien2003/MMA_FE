@@ -31,7 +31,7 @@ export default function ProductCard({ product, onPress, onAdd, width }) {
           </Text>
           <View style={styles.metaRow}>
             <Text style={styles.price}>
-              {formatMoney(product.price, product.currency || "USD")}
+              {formatMoney(product.price, product.currency || "VND")}
             </Text>
             {product.rating ? (
               <View style={styles.ratingBadge}>
