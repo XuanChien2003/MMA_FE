@@ -52,7 +52,7 @@ export default function Header({ title = "Cửa hàng điện tử", back = fals
             <Ionicons name="bag-handle" size={20} color={c.lime} />
           </View>
           <View>
-            <Text style={styles.name}>ShopVN</Text>
+            <Text style={styles.name}>PhuBinhShop</Text>
             <Text style={styles.caption}>{title}</Text>
           </View>
         </TouchableOpacity>
