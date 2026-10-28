@@ -2,7 +2,6 @@ import React from "react";
 import { ActivityIndicator, View } from "react-native";
 import { DefaultTheme, NavigationContainer } from "@react-navigation/native";
 import { Provider } from "react-redux";
-import { PersistGate } from "redux-persist/integration/react";
 import {
   SafeAreaProvider,
   initialWindowMetrics,
@@ -11,7 +10,7 @@ import { useFonts } from "expo-font";
 import * as Linking from "expo-linking";
 import Toast, { BaseToast } from "react-native-toast-message";
 import StackNavigation from "./src/navigation/StackNavigation";
-import { store, persistor } from "./src/redux/store";
+import { store } from "./src/redux/store";
 import { palette, fonts } from "./src/theme/storefront";
 
 const toast = (props, color) => (
@@ -50,9 +49,9 @@ const linking = {
   prefixes: [Linking.createURL("/"), "myapp://"],
   config: {
     screens: {
-      Home: "",
-      ProductDetails: "san-pham/:productId",
-      Cart: "gio-hang",
+      ProductList: "",
+      ProductDetail: "product/:productId",
+      Cart: "cart",
     },
   },
 };
@@ -79,11 +78,9 @@ export default function App() {
   return (
     <SafeAreaProvider initialMetrics={initialWindowMetrics}>
       <Provider store={store}>
-        <PersistGate loading={loading} persistor={persistor}>
-          <NavigationContainer theme={theme} linking={linking}>
-            <StackNavigation />
-          </NavigationContainer>
-        </PersistGate>
+        <NavigationContainer theme={theme} linking={linking}>
+          <StackNavigation />
+        </NavigationContainer>
         <Toast config={toastConfig} position="top" visibilityTime={3000} />
       </Provider>
     </SafeAreaProvider>

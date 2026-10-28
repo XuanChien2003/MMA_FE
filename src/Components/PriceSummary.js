@@ -3,43 +3,63 @@ import { StyleSheet, Text, View } from "react-native";
 import { formatMoney } from "../utils/money";
 import { fonts, palette as c } from "../theme/storefront";
 
-export default function PriceSummary({ itemCount, totals }) {
+export default function PriceSummary({ itemCount = 0, totalPrice = 0, currency = "USD" }) {
   return (
-    <View>
-      <Text style={styles.title}>Tóm tắt giỏ hàng</Text>
+    <View style={styles.container}>
+      <Text style={styles.title}>Tóm tắt đơn hàng</Text>
+
       <View style={styles.row}>
-        <Text style={styles.label}>Số lượng sản phẩm</Text>
-        <Text style={styles.value}>{itemCount}</Text>
+        <Text style={styles.label}>Tổng số lượng</Text>
+        <Text style={styles.value}>{itemCount} sản phẩm</Text>
       </View>
+
       <View style={styles.divider} />
-      {Object.entries(totals).map(([currency, total]) => (
-        <View style={styles.row} key={currency}>
-          <Text style={styles.label}>Tổng tiền sản phẩm</Text>
-          <Text style={styles.total}>{formatMoney(total, currency)}</Text>
-        </View>
-      ))}
+
+      <View style={styles.row}>
+        <Text style={styles.totalLabel}>Tổng tiền</Text>
+        <Text style={styles.totalValue}>{formatMoney(totalPrice, currency)}</Text>
+      </View>
     </View>
   );
 }
+
 const styles = StyleSheet.create({
+  container: {
+    backgroundColor: c.white,
+  },
   title: {
     fontFamily: fonts.bold,
-    fontSize: 20,
+    fontSize: 18,
     color: c.ink,
-    marginBottom: 24,
+    marginBottom: 16,
   },
   row: {
     flexDirection: "row",
-    flexWrap: "wrap",
     justifyContent: "space-between",
     alignItems: "center",
-    gap: 12,
-    paddingVertical: 8,
+    paddingVertical: 6,
   },
-  label: { fontFamily: fonts.regular, fontSize: 12, color: c.muted },
-  value: { fontFamily: fonts.semibold, fontSize: 13, color: c.ink },
-  divider: { height: 1, backgroundColor: c.line, marginVertical: 16 },
-  total: {
+  label: {
+    fontFamily: fonts.regular,
+    fontSize: 13,
+    color: c.muted,
+  },
+  value: {
+    fontFamily: fonts.semibold,
+    fontSize: 14,
+    color: c.ink,
+  },
+  divider: {
+    height: 1,
+    backgroundColor: c.line,
+    marginVertical: 12,
+  },
+  totalLabel: {
+    fontFamily: fonts.bold,
+    fontSize: 15,
+    color: c.ink,
+  },
+  totalValue: {
     fontFamily: fonts.bold,
     fontSize: 22,
     color: c.green,

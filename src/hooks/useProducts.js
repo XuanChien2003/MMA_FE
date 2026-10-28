@@ -1,73 +1,67 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { fetchShopProducts } from "../services/shopCatalog";
+import { fetchProducts } from "../services/productService";
 
-export default function useProducts(query, fetchPage = fetchShopProducts) {
+export default function useProducts(query = "", fetchPage = fetchProducts) {
   const sessionRef = useRef(null);
   const [state, setState] = useState({
     products: [],
     total: 0,
     loading: true,
-    refreshing: false,
     error: "",
-    stale: false,
   });
 
   const load = useCallback(
-    async (session, reset = false, fresh = false) => {
+    async (session, reset = false) => {
       if (
         sessionRef.current !== session ||
         session.busy ||
         (!reset && session.done)
-      )
+      ) {
         return;
+      }
       session.busy = true;
       session.retryReset = reset;
       session.controller = new AbortController();
-      setState((previous) => ({
-        ...previous,
-        error: "",
-        loading: true,
-        refreshing: reset && fresh,
-      }));
+      setState((prev) => ({ ...prev, loading: true, error: "" }));
+
       try {
         const result = await fetchPage({
           query: session.query,
           skip: reset ? 0 : session.skip,
           signal: session.controller.signal,
-          fresh,
         });
+
         if (sessionRef.current !== session) return;
+
         session.skip = (reset ? 0 : session.skip) + result.products.length;
         session.done =
           session.skip >= result.total || result.products.length === 0;
         session.retryReset = false;
-        setState((previous) => {
-          const products = reset
+
+        setState((prev) => {
+          const merged = reset
             ? result.products
-            : [...previous.products, ...result.products];
+            : [...prev.products, ...result.products];
+          // Deduplicate by productId
+          const unique = Array.from(
+            new Map(merged.map((p) => [p.productId, p])).values(),
+          );
           return {
-            products: [
-              ...new Map(
-                products.map((product) => [product.productId, product]),
-              ).values(),
-            ],
+            products: unique,
             total: result.total,
-            stale: Boolean(result.stale) || (!reset && previous.stale === true),
-            error: "",
             loading: false,
-            refreshing: false,
+            error: "",
           };
         });
-      } catch (error) {
+      } catch (err) {
         if (
           sessionRef.current === session &&
           !session.controller.signal.aborted
         ) {
-          setState((previous) => ({
-            ...previous,
+          setState((prev) => ({
+            ...prev,
             loading: false,
-            refreshing: false,
-            error: "Không thể tải sản phẩm. Kiểm tra kết nối và thử lại.",
+            error: "Không thể tải sản phẩm. Vui lòng kiểm tra kết nối mạng và thử lại.",
           }));
         }
       } finally {
@@ -78,41 +72,39 @@ export default function useProducts(query, fetchPage = fetchShopProducts) {
   );
 
   useEffect(() => {
-    const session = { query: query.trim(), skip: 0, done: false, busy: false };
+    const session = {
+      query: (query || "").trim(),
+      skip: 0,
+      done: false,
+      busy: false,
+    };
     sessionRef.current = session;
-    setState({
-      products: [],
-      total: 0,
-      loading: true,
-      refreshing: false,
-      error: "",
-      stale: false,
-    });
+    setState({ products: [], total: 0, loading: true, error: "" });
     load(session, true);
+
     return () => {
-      const activeSession = sessionRef.current;
       sessionRef.current = null;
-      activeSession?.controller?.abort();
+      session.controller?.abort();
     };
   }, [query, load]);
 
   const loadMore = useCallback(() => {
     const session = sessionRef.current;
-    if (session)
-      return load(
-        session,
-        session.retryReset === true,
-        session.retryReset === true,
-      );
+    if (session) {
+      load(session, session.retryReset === true);
+    }
   }, [load]);
+
   const refresh = useCallback(() => {
-    const old = sessionRef.current;
-    if (!old) return;
-    old.controller?.abort();
-    const session = { query: old.query, skip: 0, done: false, busy: false };
+    const session = {
+      query: (query || "").trim(),
+      skip: 0,
+      done: false,
+      busy: false,
+    };
     sessionRef.current = session;
-    return load(session, true, true);
-  }, [load]);
+    load(session, true);
+  }, [query, load]);
 
   return {
     ...state,

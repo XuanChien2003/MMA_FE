@@ -1,5 +1,5 @@
 import React from "react";
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import { TouchableOpacity, StyleSheet, Text, View } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { useNavigation } from "@react-navigation/native";
 import useCart from "../hooks/useCart";
@@ -10,15 +10,17 @@ import { fonts, palette as c } from "../theme/storefront";
 export default function CartItem({ item }) {
   const { removeItem, setQuantity } = useCart();
   const navigation = useNavigation();
-  const maxed =
-    Number.isFinite(item.countInStock) && item.quantity >= item.countInStock;
+
+  const handleOpenDetail = () => {
+    navigation.navigate("ProductDetail", { productId: item.productId });
+  };
+
   return (
     <View style={styles.card}>
       <View style={styles.row}>
-        <Pressable
-          onPress={() =>
-            navigation.navigate("ProductDetails", { productId: item.productId })
-          }
+        <TouchableOpacity
+          onPress={handleOpenDetail}
+          activeOpacity={0.7}
           accessibilityRole="button"
           accessibilityLabel={`Xem ${item.name}`}
         >
@@ -27,115 +29,132 @@ export default function CartItem({ item }) {
             label={item.name}
             style={styles.image}
           />
-        </Pressable>
+        </TouchableOpacity>
+
         <View style={styles.info}>
-          <Text style={styles.brand}>{item.brand}</Text>
-          <Pressable
-            onPress={() =>
-              navigation.navigate("ProductDetails", {
-                productId: item.productId,
-              })
-            }
+          <TouchableOpacity
+            onPress={handleOpenDetail}
+            activeOpacity={0.7}
             accessibilityRole="button"
           >
-            <Text style={styles.name}>{item.name}</Text>
-          </Pressable>
+            <Text style={styles.name} numberOfLines={2}>
+              {item.name}
+            </Text>
+          </TouchableOpacity>
           <Text style={styles.price}>
-            {formatMoney(item.price, item.currency)}
+            {formatMoney(item.price, item.currency || "USD")}
           </Text>
         </View>
-        <Pressable
+
+        <TouchableOpacity
           onPress={() => removeItem(item.productId)}
+          activeOpacity={0.7}
           style={styles.remove}
           accessibilityRole="button"
           accessibilityLabel={`Xóa ${item.name}`}
         >
-          <Ionicons name="close" size={19} color={c.muted} />
-        </Pressable>
+          <Ionicons name="trash-outline" size={18} color="#ef4444" />
+        </TouchableOpacity>
       </View>
+
       <View style={styles.controls}>
         <View style={styles.quantityControl}>
-          <Pressable
+          <TouchableOpacity
             disabled={item.quantity <= 1}
             onPress={() => setQuantity(item.productId, item.quantity - 1)}
-            style={styles.quantityButton}
+            activeOpacity={0.7}
+            style={[styles.quantityButton, item.quantity <= 1 && styles.buttonDisabled]}
             accessibilityRole="button"
             accessibilityLabel={`Giảm số lượng ${item.name}`}
           >
             <Ionicons
               name="remove"
               color={item.quantity <= 1 ? c.line : c.ink}
-              size={17}
+              size={16}
             />
-          </Pressable>
+          </TouchableOpacity>
+
           <Text style={styles.quantity}>{item.quantity}</Text>
-          <Pressable
-            disabled={maxed}
+
+          <TouchableOpacity
             onPress={() => setQuantity(item.productId, item.quantity + 1)}
+            activeOpacity={0.7}
             style={styles.quantityButton}
             accessibilityRole="button"
             accessibilityLabel={`Tăng số lượng ${item.name}`}
           >
-            <Ionicons name="add" color={maxed ? c.line : c.ink} size={17} />
-          </Pressable>
+            <Ionicons name="add" color={c.ink} size={16} />
+          </TouchableOpacity>
         </View>
-        <Text style={styles.total}>
-          {formatMoney(item.price * item.quantity, item.currency)}
-        </Text>
+
+        <View style={styles.subtotalBlock}>
+          <Text style={styles.subtotalLabel}>Thành tiền:</Text>
+          <Text style={styles.total}>
+            {formatMoney(item.price * item.quantity, item.currency || "USD")}
+          </Text>
+        </View>
       </View>
     </View>
   );
 }
+
 const styles = StyleSheet.create({
   card: {
-    padding: 20,
+    padding: 16,
     backgroundColor: c.white,
     borderRadius: 16,
-    marginBottom: 16,
+    marginBottom: 12,
     borderWidth: 1,
     borderColor: c.line,
   },
-  row: { flexDirection: "row", alignItems: "flex-start", gap: 16 },
-  image: { width: 88, height: 88, borderRadius: 8, backgroundColor: c.white },
-  info: { flex: 1, minWidth: 0 },
-  brand: {
-    fontFamily: fonts.semibold,
-    fontSize: 10,
-    color: c.green,
-    textTransform: "uppercase",
-    letterSpacing: 1,
+  row: {
+    flexDirection: "row",
+    alignItems: "flex-start",
+    gap: 12,
+  },
+  image: {
+    width: 80,
+    height: 80,
+    borderRadius: 8,
+    backgroundColor: c.white,
+    borderWidth: 1,
+    borderColor: c.line,
+  },
+  info: {
+    flex: 1,
+    minWidth: 0,
+    paddingTop: 4,
   },
   name: {
     fontFamily: fonts.semibold,
     color: c.ink,
-    fontSize: 13,
-    lineHeight: 21,
-    marginTop: 6,
+    fontSize: 14,
+    lineHeight: 20,
   },
   price: {
     fontFamily: fonts.regular,
     color: c.muted,
-    fontSize: 12,
-    marginTop: 8,
+    fontSize: 13,
+    marginTop: 6,
   },
   remove: {
-    width: 44,
-    height: 44,
-    marginRight: -12,
-    marginTop: -12,
+    width: 36,
+    height: 36,
     alignItems: "center",
     justifyContent: "center",
+    backgroundColor: "#fee2e2",
+    borderRadius: 8,
   },
   controls: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
     flexWrap: "wrap",
-    gap: 16,
+    gap: 12,
     borderTopWidth: 1,
     borderTopColor: c.line,
-    paddingTop: 16,
-    marginTop: 16,
+    paddingTop: 12,
+    marginTop: 12,
   },
   quantityControl: {
     flexDirection: "row",
@@ -145,16 +164,34 @@ const styles = StyleSheet.create({
     borderRadius: 8,
   },
   quantityButton: {
-    width: 44,
-    height: 44,
+    width: 36,
+    height: 36,
     alignItems: "center",
     justifyContent: "center",
   },
+  buttonDisabled: {
+    opacity: 0.4,
+  },
   quantity: {
     fontFamily: fonts.bold,
-    minWidth: 24,
+    minWidth: 28,
     color: c.ink,
     textAlign: "center",
+    fontSize: 13,
   },
-  total: { fontFamily: fonts.bold, fontSize: 17, color: c.ink },
+  subtotalBlock: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8,
+  },
+  subtotalLabel: {
+    fontFamily: fonts.regular,
+    fontSize: 12,
+    color: c.muted,
+  },
+  total: {
+    fontFamily: fonts.bold,
+    fontSize: 15,
+    color: c.green,
+  },
 });

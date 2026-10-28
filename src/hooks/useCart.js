@@ -1,46 +1,51 @@
-import { useDispatch, useSelector, useStore } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   addToCart,
   deleteProduct,
   updateQuantity,
-  resetCart,
+  clearCart,
   selectCartSummary,
-} from "../redux/orebiSlices";
+} from "../redux/cartSlice";
 
 export default function useCart() {
   const dispatch = useDispatch();
-  const store = useStore();
-  const products = useSelector((state) => state.orebiSlices.products);
-  const summary = useSelector(selectCartSummary);
+  const products = useSelector((state) => state.cart.products);
+  const { itemCount, totalPrice } = useSelector(selectCartSummary);
+
+  const addItem = (product, quantity = 1) => {
+    if (!product?.productId && !product?.id) return false;
+    const itemToAdd = {
+      productId: String(product.productId || product.id),
+      name: product.name || product.title,
+      title: product.title || product.name,
+      price: Number(product.price),
+      image: product.image || product.thumbnail || "",
+      currency: product.currency || "USD",
+      quantity: Number(quantity) || 1,
+    };
+    dispatch(addToCart(itemToAdd));
+    return true;
+  };
+
+  const removeItem = (productId) => {
+    dispatch(deleteProduct(String(productId)));
+  };
+
+  const setQuantity = (productId, quantity) => {
+    dispatch(updateQuantity({ productId: String(productId), quantity }));
+  };
+
+  const resetCart = () => {
+    dispatch(clearCart());
+  };
+
   return {
     products,
-    ...summary,
-    addItem: (product, quantity = 1) => {
-      if (
-        !product?.productId ||
-        !Number.isSafeInteger(quantity) ||
-        quantity <= 0
-      )
-        return false;
-      // Read the current store so consecutive presses do not share an old render.
-      const current =
-        store
-          .getState()
-          .orebiSlices.products.find(
-            (item) => item.productId === product.productId,
-          )?.quantity || 0;
-      dispatch(addToCart({ ...product, quantity }));
-      const updated =
-        store
-          .getState()
-          .orebiSlices.products.find(
-            (item) => item.productId === product.productId,
-          )?.quantity || 0;
-      return updated === current + quantity;
-    },
-    removeItem: (productId) => dispatch(deleteProduct(productId)),
-    setQuantity: (productId, quantity) =>
-      dispatch(updateQuantity({ productId, quantity })),
-    clearCart: () => dispatch(resetCart()),
+    itemCount,
+    totalPrice,
+    addItem,
+    removeItem,
+    setQuantity,
+    clearCart: resetCart,
   };
 }

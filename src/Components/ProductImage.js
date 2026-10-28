@@ -8,31 +8,33 @@ import {
   View,
 } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { productImageUrl } from "../utils/productMedia";
 
 function LoadedImage({ source, label, resizeMode }) {
   const [loading, setLoading] = useState(true);
   const [failed, setFailed] = useState(false);
   const [attempt, setAttempt] = useState(0);
-  if (!source || failed)
+
+  if (!source || failed) {
     return (
       <View style={styles.placeholder}>
-        <Ionicons name="image-outline" size={30} color="#98a2b3" />
-        <Text style={styles.caption}>Ảnh đang cập nhật</Text>
+        <Ionicons name="image-outline" size={32} color="#98a2b3" />
+        <Text style={styles.caption}>Ảnh không khả dụng</Text>
         {source ? (
           <TouchableOpacity
             onPress={() => {
               setFailed(false);
               setLoading(true);
-              setAttempt((value) => value + 1);
+              setAttempt((v) => v + 1);
             }}
             accessibilityRole="button"
           >
-            <Text style={styles.retry}>Tải lại ảnh</Text>
+            <Text style={styles.retry}>Thử lại</Text>
           </TouchableOpacity>
         ) : null}
       </View>
     );
+  }
+
   return (
     <>
       <Image
@@ -41,24 +43,27 @@ function LoadedImage({ source, label, resizeMode }) {
         accessibilityLabel={label}
         style={StyleSheet.absoluteFillObject}
         resizeMode={resizeMode}
-        fadeDuration={150}
+        fadeDuration={200}
         onLoadEnd={() => setLoading(false)}
         onError={() => {
           setLoading(false);
           setFailed(true);
         }}
       />
-      {loading ? <ActivityIndicator color="#13745b" /> : null}
+      {loading ? (
+        <ActivityIndicator size="small" color="#13745b" />
+      ) : null}
     </>
   );
 }
+
 export default function ProductImage({
   uri,
   style,
   label = "Ảnh sản phẩm",
   resizeMode = "contain",
 }) {
-  const source = productImageUrl(uri);
+  const source = typeof uri === "string" && uri.trim() ? uri.trim() : undefined;
   return (
     <View style={[styles.container, style]}>
       <LoadedImage
@@ -70,11 +75,12 @@ export default function ProductImage({
     </View>
   );
 }
+
 const styles = StyleSheet.create({
   container: {
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#f5f6f8",
+    backgroundColor: "#ffffff",
     overflow: "hidden",
   },
   placeholder: { alignItems: "center", padding: 12, gap: 6 },

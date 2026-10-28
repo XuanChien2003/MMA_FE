@@ -1,15 +1,17 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Home from "../Screens/Home";
-import ProductDetails from "../Screens/ProductDetails";
-import Cart from "../Screens/Cart";
+import ProductListScreen from "../Screens/ProductListScreen";
+import ProductDetailScreen from "../Screens/ProductDetailScreen";
+import CartScreen from "../Screens/CartScreen";
+
 const Stack = createNativeStackNavigator();
+
 export default function StackNavigation() {
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="ProductDetails" component={ProductDetails} />
-      <Stack.Screen name="Cart" component={Cart} />
+    <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="ProductList">
+      <Stack.Screen name="ProductList" component={ProductListScreen} />
+      <Stack.Screen name="ProductDetail" component={ProductDetailScreen} />
+      <Stack.Screen name="Cart" component={CartScreen} />
     </Stack.Navigator>
   );
 }
