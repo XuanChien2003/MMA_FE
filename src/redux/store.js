@@ -1,26 +1,32 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { configureStore } from "@reduxjs/toolkit";
-import { persistReducer, persistStore } from "redux-persist";
-import orebiSlices from "./orebiSlices";
-import authSlice from "./authSlice";
+import { createMigrate, persistReducer, persistStore } from "redux-persist";
+import cart from "./orebiSlices";
 const persistConfig = {
   key: "root",
   storage: AsyncStorage,
   timeout: 0,
+  version: 3,
+  migrate: createMigrate({
+    3: (state) =>
+      state
+        ? {
+            ...state,
+            products: (state.products || [])
+              .filter((p) => /^shoptaycam:\d+$/.test(p.catalogKey || ""))
+              .map((p) => ({
+                ...p,
+                productId: p.catalogKey.split(":")[1],
+                id: Number(p.catalogKey.split(":")[1]),
+                countInStock: p.countInStock === 0 ? 0 : null,
+              })),
+          }
+        : state,
+  }),
 };
-
-const persistedReducer = persistReducer(persistConfig, orebiSlices);
-const persistedAuthReducer = persistReducer(
-  { ...persistConfig, key: "auth" },
-  authSlice,
-);
-
 export const store = configureStore({
-  reducer: { orebiSlices: persistedReducer, auth: persistedAuthReducer },
+  reducer: { orebiSlices: persistReducer(persistConfig, cart) },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({ serializableCheck: false }),
 });
-
 export const persistor = persistStore(store);
-
-export const getDispatch = () => store.dispatch;

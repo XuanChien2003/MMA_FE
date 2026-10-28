@@ -1,96 +1,91 @@
 import React from "react";
-import { NavigationContainer } from "@react-navigation/native";
-import DrawerNavigation from "./src/navigation/DrawerNavigation";
+import { ActivityIndicator, View } from "react-native";
+import { DefaultTheme, NavigationContainer } from "@react-navigation/native";
 import { Provider } from "react-redux";
-import { store, persistor } from "./src/redux/store";
 import { PersistGate } from "redux-persist/integration/react";
-import { ActivityIndicator } from "react-native";
-import * as Linking from "expo-linking";
 import {
   SafeAreaProvider,
   initialWindowMetrics,
 } from "react-native-safe-area-context";
-import { colors } from "./src/constants"; // Make sure this exists
-import Toast, { BaseToast } from "react-native-toast-message"; // Import Toast components
+import { useFonts } from "expo-font";
+import * as Linking from "expo-linking";
+import Toast, { BaseToast } from "react-native-toast-message";
+import StackNavigation from "./src/navigation/StackNavigation";
+import { store, persistor } from "./src/redux/store";
+import { palette, fonts } from "./src/theme/storefront";
 
-const commonToastProps = {
-  style: {
-    minHeight: 70,
-    height: "auto",
-    width: "90%",
-  },
-  contentContainerStyle: {
-    paddingHorizontal: 15,
-    paddingVertical: 10,
-  },
-  text1NumberOfLines: 10,
-  text2NumberOfLines: 10,
-  text1Style: {
-    fontSize: 15,
-    fontWeight: "500",
-    flexWrap: "wrap",
-  },
-  text2Style: {
-    fontSize: 13,
-    flexWrap: "wrap",
-  },
-};
-
-const renderToast = (props, borderLeftColor) => (
+const toast = (props, color) => (
   <BaseToast
     {...props}
-    {...commonToastProps}
-    style={[commonToastProps.style, { borderLeftColor }, props.style]}
-    contentContainerStyle={[
-      commonToastProps.contentContainerStyle,
-      props.contentContainerStyle,
-    ]}
-    text1Style={[commonToastProps.text1Style, props.text1Style]}
-    text2Style={[commonToastProps.text2Style, props.text2Style]}
+    style={{
+      borderLeftColor: color,
+      width: "90%",
+      maxWidth: 480,
+      height: "auto",
+      minHeight: 70,
+    }}
+    contentContainerStyle={{ padding: 16 }}
+    text1NumberOfLines={2}
+    text2NumberOfLines={3}
+    text1Style={{ fontFamily: fonts.semibold, fontSize: 13 }}
+    text2Style={{ fontFamily: fonts.regular, fontSize: 12, lineHeight: 20 }}
   />
 );
-
-const RootContent = () => {
-  return (
-    <NavigationContainer
-      linking={{
-        prefixes: [Linking.createURL("/"), "myapp://"],
-        config: {
-          screens: {
-            StackScreens: {
-              screens: { Home: "", ResetPassword: "reset-password" },
-            },
-          },
-        },
+const toastConfig = {
+  success: (props) => toast(props, palette.green),
+  error: (props) => toast(props, "#b23f2d"),
+};
+const theme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: palette.green,
+    background: palette.canvas,
+    card: palette.white,
+    text: palette.ink,
+    border: palette.line,
+  },
+};
+const linking = {
+  prefixes: [Linking.createURL("/"), "myapp://"],
+  config: {
+    screens: {
+      Home: "",
+      ProductDetails: "san-pham/:productId",
+      Cart: "gio-hang",
+    },
+  },
+};
+export default function App() {
+  const [loaded, error] = useFonts({
+    "BeVietnam-Regular": require("./assets/fonts/BeVietnamPro-Regular.ttf"),
+    "BeVietnam-Medium": require("./assets/fonts/BeVietnamPro-Medium.ttf"),
+    "BeVietnam-SemiBold": require("./assets/fonts/BeVietnamPro-SemiBold.ttf"),
+    "BeVietnam-Bold": require("./assets/fonts/BeVietnamPro-Bold.ttf"),
+    "BeVietnam-ExtraBold": require("./assets/fonts/BeVietnamPro-ExtraBold.ttf"),
+  });
+  const loading = (
+    <View
+      style={{
+        flex: 1,
+        backgroundColor: palette.canvas,
+        justifyContent: "center",
       }}
     >
-      <DrawerNavigation />
-    </NavigationContainer>
+      <ActivityIndicator size="large" color={palette.green} />
+    </View>
   );
-};
-
-// Custom Toast configuration
-const toastConfig = {
-  success: (props) => renderToast(props, colors.designColor),
-  error: (props) => renderToast(props, "#D32F2F"),
-  info: (props) => renderToast(props, "#1976D2"),
-};
-
-const App = () => {
+  if (!loaded && !error) return loading;
   return (
     <SafeAreaProvider initialMetrics={initialWindowMetrics}>
       <Provider store={store}>
-        <PersistGate
-          loading={<ActivityIndicator size="large" />}
-          persistor={persistor}
-        >
-          <RootContent />
+        <PersistGate loading={loading} persistor={persistor}>
+          <NavigationContainer theme={theme} linking={linking}>
+            <StackNavigation />
+          </NavigationContainer>
         </PersistGate>
-        {/* Toast component to handle showing the toast notifications */}
-        <Toast config={toastConfig} position="top" visibilityTime={4000} />
+        <Toast config={toastConfig} position="top" visibilityTime={3000} />
       </Provider>
     </SafeAreaProvider>
   );
-};
-
-export default App;
+}

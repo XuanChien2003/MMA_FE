@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "front-end",
+    "name": "MMA Store",
     "slug": "front-end",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -11,7 +11,9 @@
       "supportsTablet": true,
       "infoPlist": {
         "NSLocalNetworkUsageDescription": "Kết nối máy chủ phát triển Expo và API cửa hàng trên cùng mạng Wi-Fi.",
-        "NSAppTransportSecurity": { "NSAllowsLocalNetworking": true }
+        "NSAppTransportSecurity": {
+          "NSAllowsLocalNetworking": true
+        }
       }
     },
     "android": {

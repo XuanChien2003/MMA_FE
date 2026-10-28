@@ -12,6 +12,8 @@ export const orebiSlice = createSlice({
         !payload.productId ||
         !Number.isFinite(payload.price) ||
         payload.price < 0 ||
+        (Number.isFinite(payload.countInStock) &&
+          payload.countInStock < quantity) ||
         !validQuantity(quantity)
       )
         return;
@@ -19,7 +21,11 @@ export const orebiSlice = createSlice({
         (item) => item.productId === payload.productId,
       );
       if (existing) {
-        if (validQuantity(existing.quantity + quantity))
+        if (
+          validQuantity(existing.quantity + quantity) &&
+          (!Number.isFinite(payload.countInStock) ||
+            existing.quantity + quantity <= payload.countInStock)
+        )
           existing.quantity += quantity;
       } else {
         state.products.push({
@@ -33,7 +39,13 @@ export const orebiSlice = createSlice({
       const item = state.products.find(
         (product) => product.productId === payload.productId,
       );
-      if (item && validQuantity(item.quantity + 1)) item.quantity += 1;
+      if (
+        item &&
+        validQuantity(item.quantity + 1) &&
+        (!Number.isFinite(item.countInStock) ||
+          item.quantity < item.countInStock)
+      )
+        item.quantity += 1;
     },
     decreaseQuantity: (state, { payload }) => {
       const item = state.products.find(
@@ -46,7 +58,12 @@ export const orebiSlice = createSlice({
       const item = state.products.find(
         (product) => product.productId === payload.productId,
       );
-      if (item) item.quantity = payload.quantity;
+      if (
+        item &&
+        (!Number.isFinite(item.countInStock) ||
+          payload.quantity <= item.countInStock)
+      )
+        item.quantity = payload.quantity;
     },
     deleteProduct: (state, { payload }) => {
       state.products = state.products.filter(

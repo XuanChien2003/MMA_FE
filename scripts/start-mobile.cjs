@@ -36,7 +36,7 @@ if (!hostname) {
   );
   process.exit(1);
 }
-const backendEnv = path.resolve(projectRoot, "../back-end/.env");
+const backendEnv = path.resolve(projectRoot, "../MMA_BE/.env");
 const backendPort = fs.existsSync(backendEnv)
   ? fs.readFileSync(backendEnv, "utf8").match(/^PORT\s*=\s*["']?(\d+)/m)?.[1] ||
     "9999"

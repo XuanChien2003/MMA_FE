@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { fetchProducts } from "../services/catalog";
+import { fetchShopProducts } from "../services/shopCatalog";
 
-export default function useProducts(query, fetchPage = fetchProducts) {
+export default function useProducts(query, fetchPage = fetchShopProducts) {
   const sessionRef = useRef(null);
   const [state, setState] = useState({
     products: [],
@@ -9,6 +9,7 @@ export default function useProducts(query, fetchPage = fetchProducts) {
     loading: true,
     refreshing: false,
     error: "",
+    stale: false,
   });
 
   const load = useCallback(
@@ -51,6 +52,7 @@ export default function useProducts(query, fetchPage = fetchProducts) {
               ).values(),
             ],
             total: result.total,
+            stale: Boolean(result.stale),
             error: "",
             loading: false,
             refreshing: false,

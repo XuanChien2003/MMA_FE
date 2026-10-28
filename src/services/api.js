@@ -8,13 +8,3 @@ api.interceptors.request.use((config) => {
   return config;
 });
 export default api;
-
-export async function fetchApi(path, options) {
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), 15000);
-  try {
-    return await fetch(apiUrl(path), { ...options, signal: controller.signal });
-  } finally {
-    clearTimeout(timer);
-  }
-}
