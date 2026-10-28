@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from "react-native";
 import { formatMoney } from "../utils/money";
 import { fonts, palette as c } from "../theme/storefront";
 
-export default function PriceSummary({ itemCount = 0, totalPrice = 0, currency = "USD" }) {
+export default function PriceSummary({ itemCount = 0, totalPrice = 0, currency = "VND" }) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Tóm tắt đơn hàng</Text>

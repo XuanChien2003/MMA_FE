@@ -42,7 +42,7 @@ export default function CartItem({ item }) {
             </Text>
           </TouchableOpacity>
           <Text style={styles.price}>
-            {formatMoney(item.price, item.currency || "USD")}
+            {formatMoney(item.price, item.currency || "VND")}
           </Text>
         </View>
 
@@ -90,7 +90,7 @@ export default function CartItem({ item }) {
         <View style={styles.subtotalBlock}>
           <Text style={styles.subtotalLabel}>Thành tiền:</Text>
           <Text style={styles.total}>
-            {formatMoney(item.price * item.quantity, item.currency || "USD")}
+            {formatMoney(item.price * item.quantity, item.currency || "VND")}
           </Text>
         </View>
       </View>

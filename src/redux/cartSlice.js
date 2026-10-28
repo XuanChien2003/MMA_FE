@@ -29,7 +29,7 @@ const cartSlice = createSlice({
           title: payload.title || payload.name,
           price: Number(payload.price),
           image: payload.image || "",
-          currency: payload.currency || "USD",
+          currency: payload.currency || "VND",
           quantity,
         });
       }

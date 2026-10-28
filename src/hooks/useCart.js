@@ -20,7 +20,7 @@ export default function useCart() {
       title: product.title || product.name,
       price: Number(product.price),
       image: product.image || product.thumbnail || "",
-      currency: product.currency || "USD",
+      currency: product.currency || "VND",
       quantity: Number(quantity) || 1,
     };
     dispatch(addToCart(itemToAdd));
