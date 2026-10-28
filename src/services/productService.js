@@ -1,54 +1,98 @@
+import PRODUCTS from "../data/products.json";
+
 export const PAGE_SIZE = 12;
-const BASE_URL = "https://dummyjson.com/products";
 
 function mapProduct(item) {
   return {
     productId: String(item.id),
-    name: item.title,
-    title: item.title,
+    name: item.name,
     description: item.description,
     price: Number(item.price),
-    currency: "USD",
-    category: item.category,
-    brand: item.brand,
-    rating: item.rating,
-    stock: item.stock,
-    image: item.thumbnail || (Array.isArray(item.images) ? item.images[0] : ""),
+    currency: "VND",
+    category: item.category || "",
+    brand: item.brand || "",
+    rating: item.rating || null,
+    stock: item.stock || 0,
+    image: item.image || (Array.isArray(item.images) ? item.images[0] : ""),
     images: Array.isArray(item.images) ? item.images : [],
   };
 }
 
-export async function fetchProducts({ query = "", skip = 0, limit = PAGE_SIZE, signal } = {}) {
-  const trimmed = query.trim();
-  const url = trimmed
-    ? `${BASE_URL}/search?q=${encodeURIComponent(trimmed)}&limit=${limit}&skip=${skip}`
-    : `${BASE_URL}?limit=${limit}&skip=${skip}`;
+/**
+ * Lấy danh sách sản phẩm với phân trang và tìm kiếm theo từ khóa.
+ *
+ * @param {object} options
+ * @param {string} [options.query=""] - Từ khóa tìm kiếm
+ * @param {number} [options.skip=0] - Vị trí bắt đầu
+ * @param {number} [options.limit=PAGE_SIZE] - Số lượng mỗi trang
+ * @param {AbortSignal} [options.signal] - AbortController signal
+ * @returns {Promise<{ products, total, skip, limit }>}
+ */
+export async function fetchProducts({
+  query = "",
+  skip = 0,
+  limit = PAGE_SIZE,
+  signal,
+} = {}) {
+  // Simulate async (giữ cấu trúc thống nhất với hook useProducts)
+  await new Promise((resolve, reject) => {
+    const timer = setTimeout(resolve, 50);
+    if (signal) {
+      signal.addEventListener("abort", () => {
+        clearTimeout(timer);
+        reject(new DOMException("Aborted", "AbortError"));
+      });
+    }
+  });
 
-  const response = await fetch(url, { signal });
-  if (!response.ok) {
-    throw new Error(`API error: ${response.status}`);
+  if (signal?.aborted) {
+    throw new DOMException("Aborted", "AbortError");
   }
 
-  const data = await response.json();
-  if (!Array.isArray(data.products) || typeof data.total !== "number") {
-    throw new Error("Dữ liệu sản phẩm không hợp lệ");
-  }
+  const trimmed = query.trim().toLowerCase();
 
-  return {
-    total: data.total,
-    skip: data.skip,
-    limit: data.limit,
-    products: data.products.map(mapProduct),
-  };
+  const filtered = trimmed
+    ? PRODUCTS.filter(
+        (p) =>
+          p.name.toLowerCase().includes(trimmed) ||
+          (p.category || "").toLowerCase().includes(trimmed) ||
+          (p.brand || "").toLowerCase().includes(trimmed),
+      )
+    : PRODUCTS;
+
+  const total = filtered.length;
+  const products = filtered.slice(skip, skip + limit).map(mapProduct);
+
+  return { products, total, skip, limit };
 }
 
+/**
+ * Lấy chi tiết một sản phẩm theo ID.
+ *
+ * @param {string|number} productId
+ * @param {AbortSignal} [signal]
+ * @returns {Promise<object>}
+ */
 export async function fetchProductDetails(productId, signal) {
-  const url = `${BASE_URL}/${encodeURIComponent(productId)}`;
-  const response = await fetch(url, { signal });
-  if (!response.ok) {
-    throw new Error(`Không tìm thấy sản phẩm (${response.status})`);
+  await new Promise((resolve, reject) => {
+    const timer = setTimeout(resolve, 50);
+    if (signal) {
+      signal.addEventListener("abort", () => {
+        clearTimeout(timer);
+        reject(new DOMException("Aborted", "AbortError"));
+      });
+    }
+  });
+
+  if (signal?.aborted) {
+    throw new DOMException("Aborted", "AbortError");
   }
 
-  const data = await response.json();
-  return mapProduct(data);
+  const found = PRODUCTS.find((p) => String(p.id) === String(productId));
+
+  if (!found) {
+    throw new Error(`Không tìm thấy sản phẩm có ID: ${productId}`);
+  }
+
+  return mapProduct(found);
 }

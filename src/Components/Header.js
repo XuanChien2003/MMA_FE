@@ -12,7 +12,7 @@ import { useNavigation, useRoute } from "@react-navigation/native";
 import useCart from "../hooks/useCart";
 import { fonts, palette as c, MAX_WIDTH } from "../theme/storefront";
 
-export default function Header({ title = "E-Commerce", back = false }) {
+export default function Header({ title = "Cửa hàng điện tử", back = false }) {
   const navigation = useNavigation();
   const route = useRoute();
   const desktop = useWindowDimensions().width >= 960;
@@ -46,13 +46,13 @@ export default function Header({ title = "E-Commerce", back = false }) {
           activeOpacity={0.8}
           style={[styles.brand, { flex: 1 }]}
           accessibilityRole="button"
-          accessibilityLabel="Trang chủ sản phẩm"
+          accessibilityLabel="Trang chủ"
         >
           <View style={styles.mark}>
             <Ionicons name="bag-handle" size={20} color={c.lime} />
           </View>
           <View>
-            <Text style={styles.name}>E-Store</Text>
+            <Text style={styles.name}>ShopVN</Text>
             <Text style={styles.caption}>{title}</Text>
           </View>
         </TouchableOpacity>

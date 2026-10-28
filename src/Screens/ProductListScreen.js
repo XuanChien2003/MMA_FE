@@ -106,7 +106,7 @@ export default function ProductListScreen() {
                 value={search}
                 onChangeText={setSearch}
                 style={styles.searchInput}
-                placeholder="Tìm kiếm sản phẩm (ví dụ: phone, laptop...)"
+                placeholder="Tìm kiếm sản phẩm (ví dụ: iPhone, Samsung, laptop...)"
                 placeholderTextColor={c.muted}
                 accessibilityLabel="Ô tìm kiếm sản phẩm"
                 autoCorrect={false}

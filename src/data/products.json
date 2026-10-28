@@ -1,0 +1,423 @@
+[
+  {
+    "id": "1",
+    "name": "iPhone 15 Pro Max 256GB Titan Tự Nhiên",
+    "category": "Điện thoại",
+    "brand": "Apple",
+    "price": 34990000,
+    "rating": 4.9,
+    "stock": 50,
+    "description": "iPhone 15 Pro Max với chip A17 Pro mạnh mẽ, khung titan cao cấp, camera 48MP chuyên nghiệp với zoom quang học 5x. Hỗ trợ USB‑C, Dynamic Island, và Action Button tiện lợi. Màn hình Super Retina XDR 6,7 inch sắc nét, pin dung lượng lớn đảm bảo sử dụng cả ngày dài.",
+    "image": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/i/p/iphone-15-pro-max-titan-tu-nhien.png",
+    "images": [
+      "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/i/p/iphone-15-pro-max-titan-tu-nhien.png",
+      "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/i/p/iphone-15-pro-max_1.jpg"
+    ]
+  },
+  {
+    "id": "2",
+    "name": "Samsung Galaxy S25 Ultra 512GB Xanh Titan",
+    "category": "Điện thoại",
+    "brand": "Samsung",
+    "price": 33990000,
+    "rating": 4.8,
+    "stock": 40,
+    "description": "Samsung Galaxy S25 Ultra nổi bật với chip Snapdragon 8 Elite, bút S Pen tích hợp AI thông minh, camera 200MP zoom 100x, màn hình Dynamic AMOLED 6,9 inch tần số 120Hz. Thiết kế titan sang trọng, pin 5000mAh sạc nhanh 45W.",
+    "image": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/s/2/s25-ultra-blue-black.png",
+    "images": [
+      "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/s/2/s25-ultra-blue-black.png"
+    ]
+  },
+  {
+    "id": "3",
+    "name": "Laptop ASUS ZenBook 14 OLED UX3405MA",
+    "category": "Laptop",
+    "brand": "ASUS",
+    "price": 28990000,
+    "rating": 4.7,
+    "stock": 25,
+    "description": "ASUS ZenBook 14 OLED sở hữu màn hình OLED 2.8K 120Hz rực rỡ, chip Intel Core Ultra 9, RAM 32GB LPDDR5X, SSD 1TB PCIe Gen4. Thiết kế siêu mỏng nhẹ chỉ 1,2kg, pin 75Wh sạc nhanh 65W, bàn phím có đèn nền và touchpad thông minh tích hợp NumberPad.",
+    "image": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/a/s/asus-ux3405ma-qd274w.png",
+    "images": [
+      "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/a/s/asus-ux3405ma-qd274w.png"
+    ]
+  },
+  {
+    "id": "4",
+    "name": "Tai nghe Sony WH-1000XM5 Chống ồn",
+    "category": "Âm thanh",
+    "brand": "Sony",
+    "price": 8490000,
+    "rating": 4.8,
+    "stock": 60,
+    "description": "Sony WH-1000XM5 là tai nghe chống ồn hàng đầu thế giới với 8 micro và 2 chip xử lý âm thanh. Thời lượng pin 30 giờ, sạc nhanh 3 phút dùng được 3 giờ. Kết nối Bluetooth 5.2 multipoint, âm thanh Hi-Res Audio, thiết kế gập nhẹ nhàng tiện mang theo.",
+    "image": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/s/o/sony-wh1000xm5_2.jpg",
+    "images": [
+      "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/s/o/sony-wh1000xm5_2.jpg"
+    ]
+  },
+  {
+    "id": "5",
+    "name": "Apple Watch Series 10 GPS 46mm Nhôm Đen",
+    "category": "Đồng hồ thông minh",
+    "brand": "Apple",
+    "price": 11990000,
+    "rating": 4.7,
+    "stock": 35,
+    "description": "Apple Watch Series 10 mỏng nhất từ trước đến nay với màn hình lớn hơn, vỏ nhôm siêu nhẹ. Tính năng theo dõi sức khỏe toàn diện: đo SPO2, ECG, nhiệt độ cơ thể, phát hiện ngã. Hỗ trợ sạc không dây nhanh, kháng nước đến 50m, pin dùng cả ngày.",
+    "image": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/a/p/apple-watch-s10-46mm-den.png",
+    "images": [
+      "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/a/p/apple-watch-s10-46mm-den.png"
+    ]
+  },
+  {
+    "id": "6",
+    "name": "iPad Air M3 11 inch WiFi 256GB Xanh",
+    "category": "Máy tính bảng",
+    "brand": "Apple",
+    "price": 20990000,
+    "rating": 4.8,
+    "stock": 30,
+    "description": "iPad Air M3 trang bị chip Apple M3 mạnh mẽ, màn hình Liquid Retina 11 inch 500 nit, hỗ trợ Apple Pencil Pro và Magic Keyboard. Thiết kế mỏng nhẹ 462g, camera sau 12MP, camera trước 12MP góc siêu rộng. Kết nối WiFi 6E, Bluetooth 5.3.",
+    "image": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/i/p/ipad-air-m3-11-xanh.png",
+    "images": [
+      "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/i/p/ipad-air-m3-11-xanh.png"
+    ]
+  },
+  {
+    "id": "7",
+    "name": "Máy tính xách tay Dell XPS 13 Plus Intel Core Ultra 7",
+    "category": "Laptop",
+    "brand": "Dell",
+    "price": 39990000,
+    "rating": 4.6,
+    "stock": 15,
+    "description": "Dell XPS 13 Plus với thiết kế InfinityEdge không viền, màn hình OLED 13.4 inch 3.5K, chip Intel Core Ultra 7 hiệu năng cao. RAM 32GB LPDDR5, SSD 1TB, pin 55Wh sạc USB-C 65W. Vỏ nhôm CNC cao cấp, bàn phím xúc giác haptic phản hồi thông minh.",
+    "image": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/d/e/dell-xps-13-plus-9320_2.png",
+    "images": [
+      "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/d/e/dell-xps-13-plus-9320_2.png"
+    ]
+  },
+  {
+    "id": "8",
+    "name": "Samsung Galaxy Z Fold 6 512GB",
+    "category": "Điện thoại",
+    "brand": "Samsung",
+    "price": 49990000,
+    "rating": 4.7,
+    "stock": 20,
+    "description": "Samsung Galaxy Z Fold 6 gập màn hình 7.6 inch Dynamic AMOLED 2X, chip Snapdragon 8 Gen 3, RAM 12GB. Khung titanium siêu bền, khả năng kháng nước IPX8. Tối ưu đa nhiệm với giao diện Galaxy AI, bút S Pen tương thích, camera 50MP với zoom quang 3x.",
+    "image": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/s/a/samsung-galaxy-z-fold6-512gb-1.png",
+    "images": [
+      "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/s/a/samsung-galaxy-z-fold6-512gb-1.png"
+    ]
+  },
+  {
+    "id": "9",
+    "name": "Loa Bluetooth JBL Xtreme 4",
+    "category": "Âm thanh",
+    "brand": "JBL",
+    "price": 6490000,
+    "rating": 4.6,
+    "stock": 45,
+    "description": "JBL Xtreme 4 với âm thanh 40W vòm tuyệt vời, công nghệ Pro Sound thế hệ mới, bass mạnh mẽ từ loa trầm kép. Chống nước và bụi chuẩn IP67, pin 24 giờ sạc nhanh USB-C. Ngoài ra còn có chức năng sạc điện thoại qua đầu USB-A, Bluetooth 5.3 kết nối nhiều thiết bị.",
+    "image": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/j/b/jbl-xtreme4-black.png",
+    "images": [
+      "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/j/b/jbl-xtreme4-black.png"
+    ]
+  },
+  {
+    "id": "10",
+    "name": "Xiaomi Redmi Note 14 Pro 8GB/256GB",
+    "category": "Điện thoại",
+    "brand": "Xiaomi",
+    "price": 7490000,
+    "rating": 4.5,
+    "stock": 80,
+    "description": "Xiaomi Redmi Note 14 Pro với màn hình AMOLED 6,67 inch 120Hz, chip Mediatek Dimensity 7300-Ultra, camera 200MP ISOCELL HP3, pin 5500mAh sạc nhanh 45W. Thiết kế khung nhôm sang trọng, cảm biến vân tay phía bên, kháng nước IP54.",
+    "image": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/r/e/redmi-note-14-pro_3.png",
+    "images": [
+      "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/r/e/redmi-note-14-pro_3.png"
+    ]
+  },
+  {
+    "id": "11",
+    "name": "Chuột Logitech MX Master 3S Không dây",
+    "category": "Phụ kiện máy tính",
+    "brand": "Logitech",
+    "price": 1990000,
+    "rating": 4.9,
+    "stock": 100,
+    "description": "Logitech MX Master 3S chuột không dây hiệu suất cao với cảm biến 8000 DPI, bánh cuộn MagSpeed siêu êm, pin 70 ngày. Kết nối Logi Bolt USB hoặc Bluetooth, tương thích mọi bề mặt kể cả kính. Thiết kế công thái học ôm tay, 7 nút có thể lập trình qua ứng dụng Logi Options+.",
+    "image": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/l/o/logitech-mx-master-3s_2.png",
+    "images": [
+      "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/l/o/logitech-mx-master-3s_2.png"
+    ]
+  },
+  {
+    "id": "12",
+    "name": "Bàn phím cơ Keychron K2 V2 Bluetooth",
+    "category": "Phụ kiện máy tính",
+    "brand": "Keychron",
+    "price": 2290000,
+    "rating": 4.7,
+    "stock": 55,
+    "description": "Keychron K2 V2 bàn phím cơ compact 75%, kết nối cả Bluetooth 5.1 lẫn USB-C. Switch Gateron G Pro có thể thay hot-swap, đèn RGB nhiều hiệu ứng, vỏ nhôm anodized. Pin 4000mAh dùng 72 giờ liên tục, tương thích Mac và Windows, layout tiếng Việt có sẵn.",
+    "image": "https://product.hstatic.net/200000722513/product/keychron_k2_v2_rgb_aluminum_frame_1_bc02a6a3ac144b618e33de9d7f1b5bff_master.jpg",
+    "images": [
+      "https://product.hstatic.net/200000722513/product/keychron_k2_v2_rgb_aluminum_frame_1_bc02a6a3ac144b618e33de9d7f1b5bff_master.jpg"
+    ]
+  },
+  {
+    "id": "13",
+    "name": "Màn hình LG 27\" UltraGear OLED 240Hz",
+    "category": "Màn hình",
+    "brand": "LG",
+    "price": 18990000,
+    "rating": 4.8,
+    "stock": 22,
+    "description": "LG 27GS95QE màn hình OLED QHD 27 inch tần số 240Hz, thời gian phản hồi 0,03ms. Hỗ trợ NVIDIA G-Sync Compatible, AMD FreeSync Premium Pro, HDR True Black 400, độ tương phản vô cực. Thiết kế viền siêu mỏng 3 cạnh, chân đế điều chỉnh đa chiều, cổng HDMI 2.1.",
+    "image": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/l/g/lg-27gs95qe_1.png",
+    "images": [
+      "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/l/g/lg-27gs95qe_1.png"
+    ]
+  },
+  {
+    "id": "14",
+    "name": "Oppo Find X8 Pro 12GB/256GB",
+    "category": "Điện thoại",
+    "brand": "Oppo",
+    "price": 25990000,
+    "rating": 4.7,
+    "stock": 35,
+    "description": "OPPO Find X8 Pro với chip Dimensity 9400 mạnh mẽ, màn hình LTPO BOE Q10 AMOLED 6,78 inch 120Hz siêu sáng 4500 nit. Cụm camera Hasselblad 50MP + 50MP tele + 50MP siêu rộng, pin 5910mAh SuperVOOC 80W, sạc không dây 50W. Thiết kế gốm cao cấp kháng nước IP69.",
+    "image": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/o/p/oppo-find-x8-pro-black.png",
+    "images": [
+      "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/o/p/oppo-find-x8-pro-black.png"
+    ]
+  },
+  {
+    "id": "15",
+    "name": "Máy tính bảng Samsung Galaxy Tab S10 FE WiFi",
+    "category": "Máy tính bảng",
+    "brand": "Samsung",
+    "price": 10490000,
+    "rating": 4.5,
+    "stock": 28,
+    "description": "Samsung Galaxy Tab S10 FE màn hình 10,9 inch 90Hz, chip Exynos 1580, RAM 8GB, lưu trữ 128GB. Hỗ trợ bút S Pen thụ động, pin 10090mAh sạc 45W, camera sau 13MP góc rộng. Thiết kế nhôm cao cấp IP68, hỗ trợ DeX không dây, One UI 7.",
+    "image": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/s/a/samsung-galaxy-tab-s10-fe-2025.png",
+    "images": [
+      "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/s/a/samsung-galaxy-tab-s10-fe-2025.png"
+    ]
+  },
+  {
+    "id": "16",
+    "name": "AirPods Pro 2 với hộp sạc MagSafe USB‑C",
+    "category": "Âm thanh",
+    "brand": "Apple",
+    "price": 6290000,
+    "rating": 4.8,
+    "stock": 70,
+    "description": "AirPods Pro 2 với chip H2 mới, chống ồn chủ động ANC nâng cao gấp 2 lần, chế độ xuyên âm Transparency mode thế hệ mới. Chống nước IPX4, pin nghe nhạc 6 giờ, tổng thời lượng 30 giờ. Hộp sạc MagSafe USB-C hỗ trợ sạc không dây Qi2 và cả Apple Watch.",
+    "image": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/a/i/airpods-pro-2-gen-usbc.png",
+    "images": [
+      "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/a/i/airpods-pro-2-gen-usbc.png"
+    ]
+  },
+  {
+    "id": "17",
+    "name": "Laptop HP Spectre x360 14 Core Ultra 7",
+    "category": "Laptop",
+    "brand": "HP",
+    "price": 36990000,
+    "rating": 4.6,
+    "stock": 12,
+    "description": "HP Spectre x360 14 laptop 2-in-1 cao cấp với Intel Core Ultra 7, màn hình OLED WUXGA 14 inch cảm ứng 360°. RAM 32GB, SSD 1TB PCIe Gen4, bút HP MPP 2.0 đi kèm. Pin 64Wh sạc nhanh Thunderbolt 4, thiết kế nhôm gem-cut sang trọng, webcam IR 9MP hỗ trợ nhận diện khuôn mặt.",
+    "image": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/h/p/hp-spectre-x360-14-eu0036tu.png",
+    "images": [
+      "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/h/p/hp-spectre-x360-14-eu0036tu.png"
+    ]
+  },
+  {
+    "id": "18",
+    "name": "Vivo X200 Pro 16GB/512GB",
+    "category": "Điện thoại",
+    "brand": "Vivo",
+    "price": 24990000,
+    "rating": 4.6,
+    "stock": 30,
+    "description": "Vivo X200 Pro với camera ZEISS 200MP siêu phân giải, zoom quang 4x, video 4K Dolby Vision. Chip Dimensity 9400, màn hình E8 AMOLED 6,78 inch 120Hz đỉnh sáng 4500 nit, pin 6000mAh FlashCharge 90W siêu nhanh. Thiết kế da Vegan cao cấp, kháng nước IP69.",
+    "image": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/v/i/vivo-x200-pro-den.png",
+    "images": [
+      "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/v/i/vivo-x200-pro-den.png"
+    ]
+  },
+  {
+    "id": "19",
+    "name": "Bộ phát WiFi ASUS ROG Rapture GT-BE98 Pro",
+    "category": "Thiết bị mạng",
+    "brand": "ASUS",
+    "price": 14990000,
+    "rating": 4.7,
+    "stock": 18,
+    "description": "ASUS ROG Rapture GT-BE98 Pro router WiFi 7 BE19000, chip Broadcom dòng mới, 6 anten lớn tích hợp khuếch đại. Tốc độ lý thuyết đến 19Gbps, MLO Multi-Link Operation, hỗ trợ 2.5G/10G WAN/LAN. 4 cổng LAN 2.5G, 1 cổng 10G, tính năng ưu tiên độ trễ cho game.",
+    "image": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/a/s/asus-rog-rapture-gt-be98-pro.png",
+    "images": [
+      "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/a/s/asus-rog-rapture-gt-be98-pro.png"
+    ]
+  },
+  {
+    "id": "20",
+    "name": "Google Pixel 9 Pro XL 256GB Màu Sứ",
+    "category": "Điện thoại",
+    "brand": "Google",
+    "price": 29990000,
+    "rating": 4.7,
+    "stock": 22,
+    "description": "Google Pixel 9 Pro XL với chip Tensor G4, màn hình LTPO OLED 6,8 inch 1-120Hz độ sáng 3000 nit. Camera 50MP siêu điện ảnh, zoom quang 5x, Ultra HDR, quay video 8K. Tính năng AI Google tích hợp sâu: Magic Eraser Pro, Best Take, Add Me, Call Screen. Pin 5060mAh sạc không dây 23W.",
+    "image": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/o/google-pixel-9-pro-xl-porcelain.png",
+    "images": [
+      "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/o/google-pixel-9-pro-xl-porcelain.png"
+    ]
+  },
+  {
+    "id": "21",
+    "name": "Sạc dự phòng Anker 737 Power Bank 24000mAh",
+    "category": "Phụ kiện",
+    "brand": "Anker",
+    "price": 2790000,
+    "rating": 4.6,
+    "stock": 90,
+    "description": "Anker 737 Power Bank 24000mAh với màn hình LED hiển thị công suất thời gian thực, 3 cổng sạc (2 USB-C 140W + 1 USB-A). Hỗ trợ PPS, PD3.1 sạc laptop MacBook, tích hợp PUPM giảm thiệt hại cho pin. Thiết kế thân mềm cao cấp, dung lượng thực tế cao.",
+    "image": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/a/n/anker-737-power-bank-24000mah_2.jpg",
+    "images": [
+      "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/a/n/anker-737-power-bank-24000mah_2.jpg"
+    ]
+  },
+  {
+    "id": "22",
+    "name": "MacBook Air M3 13 inch 16GB/256GB",
+    "category": "Laptop",
+    "brand": "Apple",
+    "price": 28990000,
+    "rating": 4.9,
+    "stock": 38,
+    "description": "MacBook Air M3 với chip Apple M3 thế hệ mới, màn hình Liquid Retina 13.6 inch sắc nét 500 nit. RAM 16GB thống nhất, SSD 256GB tốc độ cao, pin 18 giờ. Hỗ trợ màn hình ngoài kép, Camera 1080p, MagSafe 3, Thunderbolt 3. Khung nhôm 100% tái chế, siêu mỏng và nhẹ chỉ 1,24kg.",
+    "image": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/m/a/macbook-air-m3-13-starlight.png",
+    "images": [
+      "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/m/a/macbook-air-m3-13-starlight.png"
+    ]
+  },
+  {
+    "id": "23",
+    "name": "Realme GT 6 12GB/256GB",
+    "category": "Điện thoại",
+    "brand": "Realme",
+    "price": 12490000,
+    "rating": 4.5,
+    "stock": 50,
+    "description": "Realme GT 6 với chip Snapdragon 8s Gen 3, màn hình 6,78 inch AMOLED 120Hz sáng 4500 nit, camera 50MP Sony IMX906. Sạc siêu tốc SUPERVOOC 120W đầy pin chỉ 30 phút, pin 5500mAh. Thiết kế mặt lưng da vegan cao cấp, NFC, IP65 kháng nước bụi.",
+    "image": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/r/e/realme-gt-6-xanh.png",
+    "images": [
+      "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/r/e/realme-gt-6-xanh.png"
+    ]
+  },
+  {
+    "id": "24",
+    "name": "Tai nghe không dây Galaxy Buds 3 Pro",
+    "category": "Âm thanh",
+    "brand": "Samsung",
+    "price": 4990000,
+    "rating": 4.6,
+    "stock": 65,
+    "description": "Samsung Galaxy Buds 3 Pro thiết kế in-ear mới với thanh ANC, âm thanh Dolby Head Tracking, 24-bit Hi-Fi. Kháng nước IPX7, pin nghe nhạc 6,5 giờ tổng 28 giờ với hộp sạc. Kết nối Bluetooth 5.4, hỗ trợ đa điểm 2 thiết bị đồng thời, sạc không dây Qi và sạc có dây USB-C.",
+    "image": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/a/galaxy-buds-3-pro-trang.png",
+    "images": [
+      "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/a/galaxy-buds-3-pro-trang.png"
+    ]
+  },
+  {
+    "id": "25",
+    "name": "Laptop Gaming Lenovo LOQ 15AHP9 RTX 4060",
+    "category": "Laptop Gaming",
+    "brand": "Lenovo",
+    "price": 24990000,
+    "rating": 4.6,
+    "stock": 20,
+    "description": "Lenovo LOQ 15AHP9 laptop gaming với AMD Ryzen 7 8845HS, RTX 4060 8GB, màn hình IPS FHD 144Hz. RAM 16GB DDR5, SSD 512GB PCIe Gen4, bàn phím 4 vùng RGB đầy đủ. Tản nhiệt kép thông minh, cổng HDMI 2.1, USB4, RJ45, pin 80Wh sạc 300W.",
+    "image": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/l/e/lenovo-loq-15ahp9-luna-grey.png",
+    "images": [
+      "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/l/e/lenovo-loq-15ahp9-luna-grey.png"
+    ]
+  },
+  {
+    "id": "26",
+    "name": "Xiaomi 14 Ultra 16GB/512GB Đen",
+    "category": "Điện thoại",
+    "brand": "Xiaomi",
+    "price": 31990000,
+    "rating": 4.8,
+    "stock": 25,
+    "description": "Xiaomi 14 Ultra với hệ thống camera Leica Summilux 50MP f/1.63–4.0, zoom biến tiêu cự thật 3.2–75mm, chip Snapdragon 8 Gen 3. Màn hình LTPO AMOLED 6,73 inch 120Hz sáng 3000 nit, pin 5300mAh HyperCharge 90W siêu tốc. Thiết kế vật liệu Vegan Leather mềm mại, kháng nước IP68.",
+    "image": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/x/i/xiaomi-14-ultra-den.png",
+    "images": [
+      "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/x/i/xiaomi-14-ultra-den.png"
+    ]
+  },
+  {
+    "id": "27",
+    "name": "Tủ lạnh Samsung 2 cánh Inverter 385L",
+    "category": "Đồ gia dụng",
+    "brand": "Samsung",
+    "price": 12490000,
+    "rating": 4.5,
+    "stock": 10,
+    "description": "Samsung RF385BE tủ lạnh French Door 385 lít với công nghệ Inverter tiết kiệm điện, làm lạnh đa chiều SpaceMax. Hệ thống ngăn đông dưới rộng rãi, khử mùi bằng than hoạt tính, sản xuất đá tự động, màn hình LED digital điều khiển nhiệt độ. Màu inox cao cấp kháng vân tay.",
+    "image": "https://images.samsung.com/is/image/samsung/p6pim/vn/rf44a5002s9/gallery/vn-rf44a5002s9-rf44a5002s9-537483773?$650_519_PNG$",
+    "images": [
+      "https://images.samsung.com/is/image/samsung/p6pim/vn/rf44a5002s9/gallery/vn-rf44a5002s9-rf44a5002s9-537483773?$650_519_PNG$"
+    ]
+  },
+  {
+    "id": "28",
+    "name": "Kính thực tế ảo Meta Quest 3 128GB",
+    "category": "Công nghệ",
+    "brand": "Meta",
+    "price": 15990000,
+    "rating": 4.7,
+    "stock": 15,
+    "description": "Meta Quest 3 với chip Snapdragon XR2 Gen 2, màn hình LCD pancake 2064×2208 per eye 120Hz. Hỗ trợ cả VR lẫn Mixed Reality với camera RGB sắc nét, Touch Plus controllers không vòng. Bộ nhớ 128GB, kết nối WiFi 6E, Bluetooth 5.2, pin 2-3 giờ chơi liên tục.",
+    "image": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/m/e/meta-quest-3-128gb.png",
+    "images": [
+      "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/m/e/meta-quest-3-128gb.png"
+    ]
+  },
+  {
+    "id": "29",
+    "name": "Galaxy Watch Ultra 47mm LTE Titan",
+    "category": "Đồng hồ thông minh",
+    "brand": "Samsung",
+    "price": 16990000,
+    "rating": 4.7,
+    "stock": 20,
+    "description": "Samsung Galaxy Watch Ultra khung titan siêu bền, màn hình Super AMOLED 1,47 inch sáng 3000 nit, kháng nước 10ATM. Đo SpO2, ECG, đường huyết không xâm lấn (beta), GPS đa băng tần chính xác cao. Pin 590mAh dùng 48 giờ, Wear OS 5, LTE độc lập với điện thoại.",
+    "image": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/a/galaxy-watch-ultra-47mm-titan-trang.png",
+    "images": [
+      "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/a/galaxy-watch-ultra-47mm-titan-trang.png"
+    ]
+  },
+  {
+    "id": "30",
+    "name": "Máy chiếu Xiaomi Mi Smart Projector 2S",
+    "category": "Công nghệ",
+    "brand": "Xiaomi",
+    "price": 9990000,
+    "rating": 4.5,
+    "stock": 12,
+    "description": "Xiaomi Mi Smart Projector 2S độ sáng 1300 lumen ALPD, độ phân giải Full HD 1080p tự động lấy nét. Android TV 9.0 tích hợp sẵn Netflix, YouTube, Google Assistant. Loa kép Dolby Audio 12W, Bluetooth 5.0, WiFi dual-band. Hỗ trợ màn chiếu tối đa 120 inch từ khoảng cách 2,3m.",
+    "image": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/x/i/xiaomi-mi-smart-projector-2s_1.jpg",
+    "images": [
+      "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/x/i/xiaomi-mi-smart-projector-2s_1.jpg"
+    ]
+  }
+]
