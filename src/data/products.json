@@ -178,21 +178,6 @@
   },
   {
     "id": "13",
-    "name": "Màn hình LG 27\" UltraGear OLED 240Hz",
-    "category": "Màn hình",
-    "brand": "LG",
-    "price": 18990000,
-    "rating": 4.8,
-    "stock": 22,
-    "description": "LG 27GS95QE màn hình OLED QHD 27 inch tần số 240Hz, thời gian phản hồi 0,03ms. Hỗ trợ NVIDIA G-Sync Compatible, AMD FreeSync Premium Pro, HDR True Black 400, độ tương phản vô cực. Thiết kế viền siêu mỏng 3 cạnh, chân đế điều chỉnh đa chiều.",
-    "image": "https://images.unsplash.com/photo-1527443224154-c4a573d23d0a?w=600&q=80",
-    "images": [
-      "https://images.unsplash.com/photo-1527443224154-c4a573d23d0a?w=600&q=80",
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80"
-    ]
-  },
-  {
-    "id": "14",
     "name": "Oppo Find X8 Pro 12GB/256GB",
     "category": "Điện thoại",
     "brand": "Oppo",
@@ -206,7 +191,7 @@
     ]
   },
   {
-    "id": "15",
+    "id": "14",
     "name": "Samsung Galaxy Tab S10 FE WiFi 128GB",
     "category": "Máy tính bảng",
     "brand": "Samsung",
@@ -220,7 +205,7 @@
     ]
   },
   {
-    "id": "16",
+    "id": "15",
     "name": "AirPods Pro 2 với hộp sạc MagSafe USB-C",
     "category": "Âm thanh",
     "brand": "Apple",
@@ -235,7 +220,7 @@
     ]
   },
   {
-    "id": "17",
+    "id": "16",
     "name": "Laptop HP Spectre x360 14 Core Ultra 7",
     "category": "Laptop",
     "brand": "HP",
@@ -249,7 +234,7 @@
     ]
   },
   {
-    "id": "18",
+    "id": "17",
     "name": "Vivo X200 Pro 16GB/512GB",
     "category": "Điện thoại",
     "brand": "Vivo",
@@ -263,7 +248,7 @@
     ]
   },
   {
-    "id": "19",
+    "id": "18",
     "name": "Router WiFi ASUS ROG Rapture GT-BE98 Pro",
     "category": "Thiết bị mạng",
     "brand": "ASUS",
@@ -277,7 +262,7 @@
     ]
   },
   {
-    "id": "20",
+    "id": "19",
     "name": "Google Pixel 9 Pro XL 256GB Màu Sứ",
     "category": "Điện thoại",
     "brand": "Google",
@@ -291,7 +276,7 @@
     ]
   },
   {
-    "id": "21",
+    "id": "20",
     "name": "Sạc dự phòng Anker 737 Power Bank 24000mAh",
     "category": "Phụ kiện",
     "brand": "Anker",
@@ -305,7 +290,7 @@
     ]
   },
   {
-    "id": "22",
+    "id": "21",
     "name": "MacBook Air M3 13 inch 16GB/256GB Ánh Sao",
     "category": "Laptop",
     "brand": "Apple",
@@ -320,7 +305,7 @@
     ]
   },
   {
-    "id": "23",
+    "id": "22",
     "name": "Realme GT 6 12GB/256GB",
     "category": "Điện thoại",
     "brand": "Realme",
@@ -334,7 +319,7 @@
     ]
   },
   {
-    "id": "24",
+    "id": "23",
     "name": "Galaxy Buds 3 Pro Chống ồn Cao cấp",
     "category": "Âm thanh",
     "brand": "Samsung",
@@ -348,7 +333,7 @@
     ]
   },
   {
-    "id": "25",
+    "id": "24",
     "name": "Laptop Gaming Lenovo LOQ 15 RTX 4060",
     "category": "Laptop Gaming",
     "brand": "Lenovo",
@@ -363,7 +348,7 @@
     ]
   },
   {
-    "id": "26",
+    "id": "25",
     "name": "Xiaomi 14 Ultra 16GB/512GB Đen",
     "category": "Điện thoại",
     "brand": "Xiaomi",
@@ -377,7 +362,7 @@
     ]
   },
   {
-    "id": "27",
+    "id": "26",
     "name": "Tủ lạnh Samsung Inverter 385L French Door",
     "category": "Đồ gia dụng",
     "brand": "Samsung",
@@ -391,7 +376,7 @@
     ]
   },
   {
-    "id": "28",
+    "id": "27",
     "name": "Kính thực tế ảo Meta Quest 3 128GB",
     "category": "Công nghệ",
     "brand": "Meta",
@@ -405,7 +390,7 @@
     ]
   },
   {
-    "id": "29",
+    "id": "28",
     "name": "Galaxy Watch Ultra 47mm LTE Titan Trắng",
     "category": "Đồng hồ thông minh",
     "brand": "Samsung",
@@ -419,7 +404,7 @@
     ]
   },
   {
-    "id": "30",
+    "id": "29",
     "name": "Máy chiếu Xiaomi Mi Smart Projector 2S 1080p",
     "category": "Công nghệ",
     "brand": "Xiaomi",

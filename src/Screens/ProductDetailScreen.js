@@ -136,7 +136,7 @@ export default function ProductDetailScreen() {
 
                 <View style={styles.priceRatingRow}>
                   <Text style={styles.price}>
-                    {formatMoney(product.price, product.currency || "USD")}
+                    {formatMoney(product.price, product.currency || "VND")}
                   </Text>
                   {product.rating ? (
                     <View style={styles.ratingBadge}>
@@ -176,7 +176,7 @@ export default function ProductDetailScreen() {
               <View style={styles.bottomPriceBlock}>
                 <Text style={styles.bottomPriceLabel}>Giá bán:</Text>
                 <Text style={styles.bottomPriceValue}>
-                  {formatMoney(product.price, product.currency || "USD")}
+                  {formatMoney(product.price, product.currency || "VND")}
                 </Text>
               </View>
               <TouchableOpacity
@@ -216,30 +216,29 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: c.line,
     overflow: "hidden",
-    padding: 20,
-    gap: 20,
   },
   desktopCard: {
     flexDirection: "row",
     gap: 40,
     padding: 36,
-  },
-  imageWrapper: {
+  },  imageWrapper: {
     width: "100%",
-    backgroundColor: c.white,
-    borderRadius: 16,
+    backgroundColor: "#f5f5f5",
     overflow: "hidden",
   },
   desktopImageWrapper: {
     flex: 1.1,
+    borderRadius: 16,
   },
   productImage: {
     width: "100%",
-    aspectRatio: 1,
+    aspectRatio: 4 / 3,
   },
   infoWrapper: {
     flex: 1,
     justifyContent: "flex-start",
+    padding: 16,
+    paddingTop: 12,
   },
   desktopInfoWrapper: {
     flex: 1,
