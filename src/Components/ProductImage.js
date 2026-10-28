@@ -1,30 +1,31 @@
-import React, { useState } from "react";
-import {
-  ActivityIndicator,
-  Image,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import React from "react";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Image } from "expo-image";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
-function LoadedImage({ source, label, resizeMode }) {
-  const [loading, setLoading] = useState(true);
-  const [failed, setFailed] = useState(false);
-  const [attempt, setAttempt] = useState(0);
+const BLURHASH = "L6PZfSi_.AyE_3t7t7R**0o#DgR4";
+
+export default function ProductImage({
+  uri,
+  style,
+  label = "Ảnh sản phẩm",
+  resizeMode = "contain",
+}) {
+  const [failed, setFailed] = React.useState(false);
+  const [key, setKey] = React.useState(0);
+
+  const source = typeof uri === "string" && uri.trim() ? uri.trim() : null;
 
   if (!source || failed) {
     return (
-      <View style={styles.placeholder}>
+      <View style={[styles.container, style, styles.placeholder]}>
         <Ionicons name="image-outline" size={32} color="#98a2b3" />
         <Text style={styles.caption}>Ảnh không khả dụng</Text>
         {source ? (
           <TouchableOpacity
             onPress={() => {
               setFailed(false);
-              setLoading(true);
-              setAttempt((v) => v + 1);
+              setKey((v) => v + 1);
             }}
             accessibilityRole="button"
           >
@@ -36,61 +37,36 @@ function LoadedImage({ source, label, resizeMode }) {
   }
 
   return (
-    <>
-      <Image
-        key={attempt}
-        source={{
-          uri: source,
-          headers: {
-            Referer: "https://cellphones.com.vn/",
-            "User-Agent":
-              "Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.91 Mobile Safari/537.36",
-          },
-        }}
-        accessibilityLabel={label}
-        style={StyleSheet.absoluteFillObject}
-        resizeMode={resizeMode}
-        fadeDuration={200}
-        onLoadEnd={() => setLoading(false)}
-        onError={() => {
-          setLoading(false);
-          setFailed(true);
-        }}
-      />
-      {loading ? (
-        <ActivityIndicator size="small" color="#13745b" />
-      ) : null}
-    </>
-  );
-}
-
-export default function ProductImage({
-  uri,
-  style,
-  label = "Ảnh sản phẩm",
-  resizeMode = "contain",
-}) {
-  const source = typeof uri === "string" && uri.trim() ? uri.trim() : undefined;
-  return (
-    <View style={[styles.container, style]}>
-      <LoadedImage
-        key={source || "empty"}
-        source={source}
-        label={label}
-        resizeMode={resizeMode}
-      />
-    </View>
+    <Image
+      key={key}
+      source={source}
+      style={[styles.image, style]}
+      contentFit={resizeMode === "contain" ? "contain" : "cover"}
+      placeholder={BLURHASH}
+      placeholderContentFit="cover"
+      transition={300}
+      accessibilityLabel={label}
+      onError={() => setFailed(true)}
+      cachePolicy="memory-disk"
+      recyclingKey={source}
+    />
   );
 }
 
 const styles = StyleSheet.create({
+  image: {
+    backgroundColor: "#f5f5f5",
+  },
   container: {
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#ffffff",
+    backgroundColor: "#f5f5f5",
     overflow: "hidden",
   },
-  placeholder: { alignItems: "center", padding: 12, gap: 6 },
+  placeholder: {
+    gap: 6,
+    padding: 12,
+  },
   caption: { color: "#98a2b3", fontSize: 11 },
   retry: { color: "#13745b", fontSize: 12, padding: 8, fontWeight: "600" },
 });
