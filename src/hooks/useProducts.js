@@ -52,7 +52,7 @@ export default function useProducts(query, fetchPage = fetchShopProducts) {
               ).values(),
             ],
             total: result.total,
-            stale: Boolean(result.stale),
+            stale: Boolean(result.stale) || (!reset && previous.stale === true),
             error: "",
             loading: false,
             refreshing: false,
@@ -86,6 +86,7 @@ export default function useProducts(query, fetchPage = fetchShopProducts) {
       loading: true,
       refreshing: false,
       error: "",
+      stale: false,
     });
     load(session, true);
     return () => {
